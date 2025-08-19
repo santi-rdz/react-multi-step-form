@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@custom-variant active (&:where(.active, .active *));
+@custom-variant yearly (&:where(.yearly, .yearly *));
+@custom-variant invalid-input (&:where(.invalid-input, .invalid-input *));
+
+@font-face {
+  font-family: "Ubuntu-B";
+  src: url("assets/fonts/Ubuntu-Bold.ttf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu-M";
+  src: url("assets/fonts/Ubuntu-Medium.ttf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu-R";
+  src: url("assets/fonts/Ubuntu-Regular.ttf");
+  font-style: normal;
+}
+
+@theme {
+  --font-ubuntu-bold: "Ubuntu-B";
+  --font-ubuntu-medium: "Ubuntu-M";
+  --font-ubuntu-normal: "Ubuntu-R";
+  --color-grey-500: #9699aa;
+
+  --color-orange-300: #ffaf7e;
+
+  --color-red-500: #ee374a;
+  --color-red-450: #e96170;
+  --color-red-400: #f9818e;
+
+  --color-purple-600: #483eff;
+  --color-purple-500: #6259ff;
+  --color-purple-400: #928cff;
+  --color-purple-200: #d6d9e6;
+
+  --color-blue-950: #022959;
+  --color-blue-700: #164a8a;
+  --color-blue-300: #abbcff;
+  --color-blue-200: #bee2fd;
+  --color-blue-100: #eff5ff;
+  --color-blue-50: #f8f9ff;
+  --animate-reveal-up: revealUp 400ms both;
+  --animate-reveal-left: revealLeft 400ms ease-in-out both;
+  --animate-reveal-rigth: revealRigth 400ms ease-in-out both;
+  --animate-reveal-zoom: revealZoom 400ms both;
+
+  @keyframes revealUp {
+    0% {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes revealLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(14px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  @keyframes revealRigth {
+    0% {
+      opacity: 0;
+      transform: translateX(-14px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  @keyframes revealZoom {
+    0% {
+      opacity: 0;
+      scale: 0.6;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+}
+@utility txt-1 {
+  font-size: clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
+  line-height: 1.2;
+}
+@utility txt-2 {
+  font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  line-height: 1.5;
+}
+
+@utility txt-3 {
+  font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+@utility txt-4 {
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+@utility my-container {
+  width: min(90%, 60rem);
+  margin-inline: auto;
+}
+.step-tracker {
+  background-image: url("assets/images/bg-sidebar-mobile.svg");
+
+  @media (min-width: 768px) {
+    background-image: url("assets/images/bg-sidebar-desktop.svg");
+  }
+}
